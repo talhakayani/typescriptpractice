@@ -87,3 +87,29 @@ class English extends Subject {
 
 const english: English = new English(4);
 english.display(); //this will call the display function implemented in the sub class
+
+/**
+ * let's talk about static keyword
+ * this will be initalized inside of any class this means that the object or
+ * function is declared following the static keyword then that function or
+ * field is only be accessable by class name it self it will
+ * not accessable by it's objects
+ *
+ * let's code this
+ */
+
+class Sample {
+  static num: number;
+
+  constructor() {
+    console.log('Sample class object is created');
+  }
+  static display(): void {
+    // here we can't access the static variable by this keyword
+    // we use the class name instead
+    console.log('Sample Number is: ' + Sample.num);
+  }
+}
+
+Sample.num = 23;
+Sample.display();
